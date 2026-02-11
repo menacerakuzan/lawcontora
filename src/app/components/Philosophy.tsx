@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 
 export default function Philosophy() {
     return (
-        <section id="philosophy" className="relative py-40 md:py-48 bg-[#FAFAFA] overflow-hidden">
+        <section id="philosophy" className="relative py-40 md:py-48 bg-[#F8F9FA] overflow-hidden">
+            {/* Subtle Gradient for Depth */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-[#F0F2F5]/20 pointer-events-none" />
             {/* Texture Overlay */}
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("/noise.png")' }}></div>
 
@@ -23,8 +25,8 @@ export default function Philosophy() {
                             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] text-slate-900 tracking-tighter">
-                                "Адвокати, які <br />
-                                <span className="text-gold italic font-light italic">приведуть до результату</span>"
+                                &quot;Адвокати, які <br />
+                                <span className="text-gold italic font-light">приведуть до результату</span>&quot;
                             </h2>
                         </motion.div>
                     </div>

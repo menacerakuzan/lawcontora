@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'UA' | 'EN';
 
@@ -30,10 +30,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
                 consultation: "Замовити консультацію",
                 footer_notice: "Всі права захищено.",
                 contact_us: "Зв’яжіться з нами",
-                urgent: "Термінові питання",
+                urgent: "Бездоганність у праві",
                 address_odesa: "Одеса, Покровський пров. 6",
                 address_kherson: "Херсон",
                 address_lviv: "Львів, вул. Єфремова 4",
+                // Stats & Trust
+                stat_cases: "Успішно вирішених справ",
+                stat_court: "Перемог у судових засіданнях",
+                stat_clients: "Активних корпоративних клієнтів",
+                stat_assets: "Загальний захист активів",
                 // Mega Menu / Services
                 service_family: "Сімейне право",
                 service_property: "Майнові спори",
@@ -46,6 +51,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
                 service_it: "IT-право",
                 service_tax: "Податкове право",
                 service_bankruptcy: "Банкрутство",
+                // Editorial
+                editorial_title: "Експертні погляди",
+                editorial_tag: "Правовий аналіз",
                 // Form
                 form_name: "Залиште ім’я",
                 form_phone: "Залиште номер",
@@ -69,10 +77,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
                 consultation: "Schedule a Consultation",
                 footer_notice: "All rights reserved.",
                 contact_us: "Contact Us",
-                urgent: "Urgent Inquiries",
+                urgent: "Excellence in Law",
                 address_odesa: "Odesa, Pokrovsky ln, 6",
                 address_kherson: "Kherson",
                 address_lviv: "Lviv, Yefremova St, 4",
+                // Stats & Trust
+                stat_cases: "Cases Successfully Solved",
+                stat_court: "Successful Court Defense",
+                stat_clients: "Active Corporate Clients",
+                stat_assets: "Total Asset Protection",
                 // Mega Menu / Services
                 service_family: "Family Law",
                 service_property: "Property Law",
@@ -85,6 +98,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
                 service_it: "IT-law",
                 service_tax: "Tax Law",
                 service_bankruptcy: "Bankruptcy",
+                // Editorial
+                editorial_title: "Editorial Perspectives",
+                editorial_tag: "Legal Insight",
                 // Form
                 form_name: "Leave your name",
                 form_phone: "Leave your number",

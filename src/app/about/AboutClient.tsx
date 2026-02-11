@@ -46,10 +46,11 @@ export default function AboutClient() {
                         src="/images/odesa-opera.png"
                         alt="Odesa Opera House"
                         fill
-                        className="object-cover"
+                        className="object-cover opacity-80"
                         priority
+                        quality={90}
                     />
-                    <div className="absolute inset-0 bg-slate-950/70" />
+                    <div className="absolute inset-0 bg-navy-950/80" />
                     <div className="relative z-10 container-custom text-center">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -57,7 +58,7 @@ export default function AboutClient() {
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-white font-serif text-4xl md:text-6xl mb-6">Одеська Опера</h2>
+                            <h2 className="text-white !text-white font-serif text-4xl md:text-6xl mb-6">Одеська Опера</h2>
                             <p className="text-white/60 text-xs uppercase tracking-[0.4em]">Heritage of Excellence Since 1998</p>
                         </motion.div>
                     </div>

@@ -11,6 +11,17 @@ import { useLanguage } from "../context/LanguageContext";
 
 type ServiceCategory = 'military' | 'auto' | 'civil' | 'business';
 
+interface ServiceItem {
+    title: string;
+    desc: string;
+}
+
+interface CategoryData {
+    title: string;
+    description: string;
+    items: ServiceItem[];
+}
+
 export default function ServicesClient() {
     const { t } = useLanguage();
     const [activeTab, setActiveTab] = useState<ServiceCategory>('military');
@@ -67,10 +78,11 @@ export default function ServicesClient() {
                         src="/images/odesa-opera.png"
                         alt="Odesa Opera House Hero"
                         fill
-                        className="object-cover"
+                        className="object-cover opacity-80"
                         priority
+                        quality={90}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-transparent" />
 
                     <div className="container-custom relative z-10 pt-20">
                         <motion.div
@@ -80,7 +92,7 @@ export default function ServicesClient() {
                             className="max-w-3xl"
                         >
                             <span className="text-gold text-xs uppercase tracking-[0.3em] font-medium block mb-4">{t('services')}</span>
-                            <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">Expertise & Heritage</h1>
+                            <h1 className="text-5xl md:text-7xl font-serif text-white !text-white mb-6">Expertise & Heritage</h1>
                             <p className="text-xl text-white/60 font-light leading-relaxed max-w-2xl">
                                 Ми поєднуємо глибоку експертизу з цінностями Одеської юридичної школи.
                             </p>
@@ -93,7 +105,7 @@ export default function ServicesClient() {
                     <div className="hidden lg:grid grid-cols-12 gap-12">
                         {/* Sidebar Tabs */}
                         <div className="col-span-3 space-y-2">
-                            {(Object.entries(localizedServices) as [ServiceCategory, any][]).map(([key, data]) => (
+                            {(Object.entries(localizedServices) as [ServiceCategory, CategoryData][]).map(([key, data]) => (
                                 <button
                                     key={key}
                                     onClick={() => setActiveTab(key)}
@@ -123,7 +135,7 @@ export default function ServicesClient() {
                                     <p className="text-slate-500 mb-10 font-light">{localizedServices[activeTab].description}</p>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        {localizedServices[activeTab].items.map((item: any, index: number) => (
+                                        {localizedServices[activeTab].items.map((item: ServiceItem, index: number) => (
                                             <div key={index} className="group p-6 border border-slate-100 hover:border-gold/30 hover:shadow-lg transition-all duration-300 rounded-sm bg-white">
                                                 <h3 className="text-lg font-serif text-slate-900 mb-3 group-hover:text-gold transition-colors">
                                                     {item.title}
@@ -145,7 +157,7 @@ export default function ServicesClient() {
 
                     {/* Mobile Layout: Accordions */}
                     <div className="lg:hidden space-y-4">
-                        {(Object.entries(localizedServices) as [ServiceCategory, any][]).map(([key, data]) => (
+                        {(Object.entries(localizedServices) as [ServiceCategory, CategoryData][]).map(([key, data]) => (
                             <div key={key} className="border border-slate-100 rounded-sm overflow-hidden">
                                 <button
                                     onClick={() => setMobileExpanded(mobileExpanded === key ? null : key)}
@@ -168,7 +180,7 @@ export default function ServicesClient() {
                                             <div className="p-6 pt-0 bg-slate-50 border-t border-slate-100/50">
                                                 <p className="text-sm text-slate-500 mb-6 font-light">{data.description}</p>
                                                 <div className="space-y-4">
-                                                    {data.items.map((item: any, idx: number) => (
+                                                    {data.items.map((item: ServiceItem, idx: number) => (
                                                         <div key={idx} className="bg-white p-4 rounded-sm border border-slate-100">
                                                             <h4 className="font-serif text-slate-900 mb-2">{item.title}</h4>
                                                             <p className="text-xs text-slate-500 leading-relaxed font-light">{item.desc}</p>

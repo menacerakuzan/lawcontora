@@ -1,0 +1,33 @@
+
+> temp-next-app@0.1.0 lint
+> eslint
+
+
+/Users/iladovzenko/Desktop/law/src/app/components/Concierge.tsx
+  4:16  warning  'Shield' is defined but never used  @typescript-eslint/no-unused-vars
+  4:24  warning  'Radio' is defined but never used   @typescript-eslint/no-unused-vars
+
+/Users/iladovzenko/Desktop/law/src/app/components/EditorialHub.tsx
+  3:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/iladovzenko/Desktop/law/src/app/components/Footer.tsx
+  3:40  warning  'Trash2' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/iladovzenko/Desktop/law/src/app/components/Navigation.tsx
+  7:32  warning  'ChevronRight' is defined but never used  @typescript-eslint/no-unused-vars
+  7:46  warning  'Globe' is defined but never used         @typescript-eslint/no-unused-vars
+
+/Users/iladovzenko/Desktop/law/src/app/components/Philosophy.tsx
+  26:33   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  27:116  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/iladovzenko/Desktop/law/src/app/components/PracticeAreaSystem.tsx
+  3:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/iladovzenko/Desktop/law/src/app/components/Services.tsx
+    5:8   warning  'Link' is defined but never used                                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+   48:12  warning  'hoveredIndex' is assigned a value but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  103:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 12 problems (2 errors, 10 warnings)
+

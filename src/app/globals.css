@@ -4,22 +4,25 @@
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Inter", sans-serif;
 
-  --color-background: #FAFAFA;
-  /* Off-White */
-  --color-foreground: #0F172A;
-  /* Slate 900 */
+  --color-background: #FDFDFD;
+  /* Paper White */
+  --color-foreground: #0A1128;
+  /* Deep Navy */
 
-  --color-slate-900: #0F172A;
-  --color-slate-800: #1E293B;
+  --color-navy-950: #050816;
+  --color-navy-900: #0A1128;
+  --color-navy-800: #162244;
+  --color-slate-900: #1E293B;
+  /* Authoritative Slate */
   --color-slate-500: #64748B;
 
-  --color-gold: #C5A059;
-  /* Muted Gold */
-  --color-gold-light: #E5D0A1;
+  --color-gold: #B3914D;
+  /* Signature Gold */
+  --color-gold-light: #D4AF37;
   --color-gold-dark: #8F7238;
 
-  --animate-fade-in: fade-in 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  --animate-slide-up: slide-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  --animate-fade-in: fade-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-slide-up: slide-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 
   @keyframes fade-in {
     from {
@@ -34,7 +37,7 @@
   @keyframes slide-up {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
 
     to {
@@ -46,8 +49,8 @@
 
 /* Reset and Base Styles */
 :root {
-  --background: #FAFAFA;
-  --foreground: #0F172A;
+  --background: #FDFDFD;
+  --foreground: #0A1128;
 }
 
 body {
@@ -81,8 +84,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .text-gold {
@@ -97,48 +101,85 @@ h6 {
   border-color: var(--color-gold);
 }
 
+.text-editorial {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.link-premium {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-navy-900);
+  transition: color 0.3s ease;
+}
+
+.link-premium::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-premium:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 /* Luxury Button Styles */
 .btn-luxury {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 2rem;
+  padding: 1rem 2.5rem;
   font-family: var(--font-sans);
   font-size: 0.75rem;
   /* text-xs */
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   /* tracking-widest */
   color: #FFFFFF;
-  background-color: var(--color-slate-900);
-  transition: all 0.3s ease;
-  border: 1px solid var(--color-slate-900);
+  background-color: var(--color-navy-900);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid var(--color-navy-900);
 }
 
 .btn-luxury:hover {
   background-color: var(--color-gold);
   border-color: var(--color-gold);
   color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(179, 145, 77, 0.3);
 }
 
 .btn-luxury-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 2rem;
+  padding: 1rem 2.5rem;
   font-family: var(--font-sans);
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-slate-900);
+  letter-spacing: 0.25em;
+  color: var(--color-navy-900);
   background-color: transparent;
-  border: 1px solid var(--color-slate-900);
-  transition: all 0.3s ease;
+  border: 1px solid var(--color-navy-900);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .btn-luxury-outline:hover {
-  background-color: var(--color-slate-900);
+  background-color: var(--color-navy-900);
   color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
 /* Utility */
@@ -147,6 +188,12 @@ h6 {
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-slate-100), transparent);
 }
 
 @media (min-width: 768px) {

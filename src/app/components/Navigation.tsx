@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ChevronRight, Globe } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { clsx } from "clsx";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -69,11 +69,11 @@ export default function Navigation() {
                 onMouseLeave={() => setMegaMenuOpen(false)}
             >
                 <div className="container-custom flex items-center justify-between">
-                    <Link href="/" className="z-50 relative group">
-                        <div className="flex flex-col">
+                    <Link href="/" className="z-50 relative group flex-shrink-0">
+                        <div className="flex flex-col whitespace-nowrap">
                             <span className={clsx(
-                                "font-serif text-2xl tracking-tight transition-colors duration-300",
-                                (isLightText && !megaMenuOpen) ? "text-white" : "text-slate-900"
+                                "font-serif text-2xl tracking-tighter transition-colors duration-500",
+                                (isLightText && !megaMenuOpen) ? "text-white" : "text-navy-900"
                             )}>
                                 Granenko & Dovzhenko
                             </span>
@@ -90,19 +90,19 @@ export default function Navigation() {
                             <Link
                                 href="/services"
                                 className={clsx(
-                                    "text-xs uppercase tracking-[0.2em] transition-colors duration-300 font-medium flex items-center gap-1",
-                                    (isLightText && !megaMenuOpen) ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-slate-900"
+                                    "text-[11px] uppercase tracking-[0.3em] transition-colors duration-300 font-medium flex items-center gap-1.5",
+                                    (isLightText && !megaMenuOpen) ? "text-white/70 hover:text-white" : "text-navy-900/60 hover:text-navy-900"
                                 )}
                             >
-                                {t('services')} <ChevronDown className="w-3 h-3" />
+                                {t('services')} <ChevronDown className="w-3 h-3 opacity-50" />
                             </Link>
                         </div>
 
                         <Link
                             href="/team"
                             className={clsx(
-                                "text-xs uppercase tracking-[0.2em] transition-colors duration-300 font-medium",
-                                (isLightText && !megaMenuOpen) ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-slate-900"
+                                "text-[11px] uppercase tracking-[0.3em] transition-colors duration-300 font-medium",
+                                (isLightText && !megaMenuOpen) ? "text-white/70 hover:text-white" : "text-navy-900/60 hover:text-navy-900"
                             )}
                         >
                             {t('partners')}
@@ -110,30 +110,29 @@ export default function Navigation() {
                         <Link
                             href="/about"
                             className={clsx(
-                                "text-xs uppercase tracking-[0.2em] transition-colors duration-300 font-medium",
-                                (isLightText && !megaMenuOpen) ? "text-white/80 hover:text-white" : "text-slate-600 hover:text-slate-900"
+                                "text-[11px] uppercase tracking-[0.3em] transition-colors duration-300 font-medium",
+                                (isLightText && !megaMenuOpen) ? "text-white/70 hover:text-white" : "text-navy-900/60 hover:text-navy-900"
                             )}
                         >
                             {t('legacy')}
                         </Link>
 
                         {/* Language Switcher */}
-                        <div className="flex items-center gap-2 border-l border-current pl-4 opacity-70 hover:opacity-100 transition-opacity">
+                        <div className="flex items-center gap-3 border-l border-white/10 pl-6 h-4">
                             <button
                                 onClick={() => setLang('UA')}
                                 className={clsx(
-                                    "text-[10px] font-medium transition-colors hover:text-gold",
-                                    lang === 'UA' ? ((isLightText && !megaMenuOpen) ? "text-white" : "text-slate-900") : "text-slate-400"
+                                    "text-[10px] font-bold tracking-widest transition-all duration-300 hover:text-gold",
+                                    lang === 'UA' ? ((isLightText && !megaMenuOpen) ? "text-white scale-110" : "text-navy-900 scale-110") : "text-slate-400 opacity-50"
                                 )}
                             >
                                 UA
                             </button>
-                            <span className="text-[10px] opacity-50">|</span>
                             <button
                                 onClick={() => setLang('EN')}
                                 className={clsx(
-                                    "text-[10px] font-medium transition-colors hover:text-gold",
-                                    lang === 'EN' ? ((isLightText && !megaMenuOpen) ? "text-white" : "text-slate-900") : "text-slate-400"
+                                    "text-[10px] font-bold tracking-widest transition-all duration-300 hover:text-gold",
+                                    lang === 'EN' ? ((isLightText && !megaMenuOpen) ? "text-white scale-110" : "text-navy-900 scale-110") : "text-slate-400 opacity-50"
                                 )}
                             >
                                 EN

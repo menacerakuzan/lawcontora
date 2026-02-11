@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Lock, Shield, Radio, Fingerprint, ScanEye, Activity } from "lucide-react";
+import { Lock, Fingerprint, ScanEye, Activity } from "lucide-react";
 import Magnetic from "./Magnetic";
 
 export default function Concierge() {
